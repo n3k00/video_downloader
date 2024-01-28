@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:video_downloader/controller/permission_binding.dart';
 import 'package:video_downloader/main_wrapper.dart';
 
 void main() {
@@ -11,11 +13,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'Video Downloader',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
       ),
+      initialBinding: PermissionBinding(),
       home: MainWrapper(),
     );
   }
